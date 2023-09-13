@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Responsivo com Imagens e Vídeo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+            
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-content {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .imgAmiAmazonia{
+            width: 30%;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1vh;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #fotoEmerson{
+            display: block;
+            margin: auto;
+            width: 60%;
+            border: 1vw inset #5d738b;
+        }
+        #legendaFotoEmerson{
+            text-align: center;
+            margin-top: 1px;
+        }
+        nav a:hover{
+            transition: 1s;
+
+            background-color: aquamarine;
+        }
+        @media only screen and (max-width: 600px){
+            header{
+                grid-area: head;
+            }
+            footer{
+                grid-area: fot;
+            }
+
+            nav{
+                display: grid;
+                column-count: 1;
+                
+            }
+            
+           nav a{
+            margin-top: 10px;
+            border-style: solid;
+            border-width: 2px;
+            text-align: center;
+            width: 50vw;
+          }      
+            
+            .container{
+                grid-area: cont;
+            }
+            main{
+                display: grid;
+                grid-template-areas: 'nav'
+                                    'nav'
+                                    'nav'
+                                    'cont'
+                                    'fot'
+                                    ;
+            }
+            picture{
+                display: grid;
+                column-count: 1;
+
+            }
+            .imgAmiAmazonia{
+                margin: auto;
+                margin-top: 5px;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site Responsivo com Imagens e Vídeo</h1>
+    </header>
+    <main>
+    <nav>
+        <a href="#">Página Inicial</a>
+        <a href="#">Galeria de Imagens</a>
+        <a href="#">Vídeo</a>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <main>
+            <h2>Bem-vindo ao Meu Site Responsivo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet tortor justo. Nulla facilisi.</p>
+
+            <h3>Galeria de Imagens</h3>
+            <div>
+                <picture>
+            
+                    <img src="img/034.JPG" alt="Imagem 1" class="imgAmiAmazonia">
+                    <img src="img/Tucano.jpg" alt="Imagem 2" class="imgAmiAmazonia">
+
+                    <img src="img/042.JPG" alt="Imagem 3" class="imgAmiAmazonia">
+            </picture>
+            </div>
+     </main>
+
+            <h3>Os principais animais da Anazônia</h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/s9fa2H1p9JQ?si=EDLmMoRgGNt22zTZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <picture>
+                <source media="(max-width: 600px)" srcset="img/Emerosn-P.JPG" sizes="">
+                <img src="img/Emerosn-G.JPG" alt="" id="fotoEmerson">
+                <p id="legendaFotoEmerson">Prof. Emerson pelos rios da Amazônia brasileira</p>
+            </picture>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Meu Site Responsivo com Imagens e Vídeo
+    </footer>
+</body>
+</html>
+
+<!-- Lembre-se de substituir os placeholders "imagem1.jpg", "imagem2.jpg" e "imagem3.jpg" pelos URLs ou caminhos das suas próprias imagens e substituir "https://www.youtube.com/embed/seu-video-aqui" pelo URL do vídeo que você deseja incorporar. Esta página utiliza CSS para torná-la responsiva, e o vídeo incorporado também se adapta ao tamanho da tela. -->
